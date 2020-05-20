@@ -5,7 +5,7 @@ import pl.wat.wcy.panek.simulateddevices.SimulateddevicesApplication;
 import pl.wat.wcy.panek.simulateddevices.config.PublisherIdProvider;
 
 @Component
-public class RandomUuidProvider implements PublisherIdProvider {
+public class ApplicationNameIdProvider implements PublisherIdProvider {
 
     @Override
     public String id() {
