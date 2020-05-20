@@ -1,0 +1,20 @@
+application:
+  mqtt:
+    protocol: "${MQTT_PROTOCOL:tcp}"
+    host: "${MQTT_HOST:localhost}"
+    port: "${MQTT_PORT:1883}"
+    topic: "${MQTT_TOPIC:HEALTH}"
+  userIds: >
+    user1,
+    user2,
+    user3,
+    user4,
+    user5
+  data:
+    spo2: so2-sample-exhausted.csv
+    ecg: ecg.csv
+    ecg_dead: ecg-dead.csv
+
+
+server:
+  port: "${INTERNAL_SERVICE_PORT:8080}"
