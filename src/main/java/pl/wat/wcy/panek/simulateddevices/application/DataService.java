@@ -14,14 +14,14 @@ abstract class DataService {
 
     public void publish(String userId) {
         while (true) {
-            data().forEach(val -> {
+            data(userId).forEach(val -> {
                 sleep(val);
                 messagePublisher.send(message(val, userId));
             });
         }
     }
 
-    protected abstract List<FileEntry> data();
+    protected abstract List<FileEntry> data(String userId);
     protected abstract Message message(FileEntry val, String userId);
 
 

@@ -4,16 +4,26 @@ application:
     host: "${MQTT_HOST:localhost}"
     port: "${MQTT_PORT:1883}"
     topic: "${MQTT_TOPIC:HEALTH}"
-  userIds: >
-    user1,
-    user2,
-    user3,
-    user4,
-    user5
   data:
-    spo2: so2-sample-exhausted.csv
-    ecg: ecg.csv
-    ecg_dead: ecg-dead.csv
+    spo2:
+      854e18b9-c8e3-4440-bf77-ffbfc35e1b97: so2-sample-exhausted.csv
+      5bff95b5-6eca-479a-befc-9819f51ccf6f: so2-sample-exhausted.csv
+      c2a14ef9-5185-44fd-bbef-c69df88fc72d: so2-sample-exhausted.csv
+      f72904c2-5648-4396-9b04-a7233c2ba6a9: so2-sample-exhausted.csv
+      e3f4a484-03c4-4172-9888-7da4110a4ef3: so2-sample-exhausted.csv
+    ecg:
+      854e18b9-c8e3-4440-bf77-ffbfc35e1b97: ecg.csv
+      5bff95b5-6eca-479a-befc-9819f51ccf6f: ecg-dead.csv
+      c2a14ef9-5185-44fd-bbef-c69df88fc72d: ecg-dead.csv
+      f72904c2-5648-4396-9b04-a7233c2ba6a9: ecg.csv
+      e3f4a484-03c4-4172-9888-7da4110a4ef3: ecg.csv
+  userIds: >
+    854e18b9-c8e3-4440-bf77-ffbfc35e1b97,
+    5bff95b5-6eca-479a-befc-9819f51ccf6f,
+    c2a14ef9-5185-44fd-bbef-c69df88fc72d,
+    f72904c2-5648-4396-9b04-a7233c2ba6a9,
+    e3f4a484-03c4-4172-9888-7da4110a4ef3
+
 
 
 server:

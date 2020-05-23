@@ -35,20 +35,18 @@ public class ApplicationEventListener {
     public void onApplicationReady(ApplicationReadyEvent event){
         if(!done.get()) {
             done.set(true);
-            generateSpO2();
-            generateEcg();
+            generate();
         }
     }
 
-    private void generateEcg() {
+    private void generate() {
         userIds.forEach(val ->
-                executors.submit(() -> ecgDataService.publish(val))
+                {
+                    CompletableFuture.runAsync(() -> ecgDataService.publish(val), executors);
+                    CompletableFuture.runAsync(() -> spO2DataService.publish(val), executors);
+                }
         );
 
-    }
-
-    private void generateSpO2() {
-        userIds.forEach(val -> executors.submit(() -> spO2DataService.publish(val)));
     }
 
 
